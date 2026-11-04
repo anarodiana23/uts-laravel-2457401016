@@ -42,7 +42,7 @@
                         <td class="text-center">
                             <a href="{{ route('students.show', $student->id) }}" class="btn btn-info btn-sm text-white">Detail</a>
                             <a href="{{ route('students.edit', $student->id) }}" class="btn btn-warning btn-sm text-white">Ubah</a>
-                            <form action="{{ route('students.destroy', $student->id) }}" method="POST" class="d-inline">
+                            <form action="{{ route('students.destroy', $student->id) }}" method="POST" class="d-inline" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Apakah Anda yakin ingin menghapus data?')">Hapus</button>

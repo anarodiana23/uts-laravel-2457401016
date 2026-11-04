@@ -98,11 +98,12 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        // Hapus data siswa yang dipilih
-        $student = Student::findOrFail($id);
-        $student->delete();
+    // Hapus data siswa yang dipilih
+    $student = Student::findOrFail($id);
+    $student->delete();
 
-        // Gunakan redirect untuk memicu alert sukses di halaman depan
-        return redirect()->route('students.index')->with('success', 'Data siswa berhasil dihapus!');
+    // Gunakan redirect untuk memicu alert sukses di halaman depan
+    return redirect()->route('students.index')->with('success', 'Data siswa berhasil dihapus!');
     }
+
 }
